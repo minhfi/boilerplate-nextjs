@@ -1,0 +1,72 @@
+@import '/src/styles/variables';
+@import '/src/styles/mixin';
+
+.footer {
+  padding: 24px 0 18px;
+  border-top: 1px solid $neutral-200;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.policy {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  @include mediaQueryMax($screenSmall) {
+    padding: 0 44px;
+    gap: 12px;
+  }
+
+  @include mediaQueryMax($screenExtraSmall) {
+    padding: 0 8px;
+    gap: 12px;
+  }
+}
+
+.policyList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+
+  @include typo(14px, 500, 24px);
+  cursor: pointer;
+  color: $neutral-black;
+  a {
+    color: $neutral-black;
+    text-decoration: none;
+  }
+
+  @include mediaQueryMax($screenSmall) {
+    flex-wrap: wrap;
+    column-gap: 32px;
+    row-gap: 4px;
+  }
+
+  @include mediaQueryMax($screenExtraSmall) {
+    padding: 0 40px;
+  }
+}
+
+.policyCopyright {
+  @include text-style(12px, 400, 20px, $neutral-300);
+  display: flex;
+  gap: 4px;
+
+  @include mediaQueryMax($screenSmall) {
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+}

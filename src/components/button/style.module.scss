@@ -1,0 +1,124 @@
+@import '/src/styles/variables';
+@import '/src/styles/mixin';
+
+.Btn {
+  border: none;
+  font-weight: 400;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  @include flex-row-center();
+  font-family: $primaryFont;
+
+  &.regular {
+    border-radius: 16px;
+    padding: 7px 16px;
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  &.large {
+    border-radius: 16px;
+    padding: 13px 8px;
+    font-size: 16px;
+    line-height: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &:active {
+    box-shadow: none;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  color: $neutral-700;
+
+  &.primary {
+    background-color: $primary-400;
+    border: 1px solid $primary-600;
+    font-weight: $boldWeight;
+
+    &:hover {
+      background-color: $primary-500;
+    }
+
+    &:active {
+      background-color: $primary-600;
+    }
+
+    &:disabled {
+      color: $neutral-100;
+      background-color: $neutral-250;
+      border-color: $neutral-250;
+
+      svg {
+        color: $neutral-100;
+      }
+    }
+  }
+
+  &.secondary {
+    background-color: $neutral-white;
+    border: 1px solid $neutral-200;
+    font-weight: $boldWeight;
+
+    &:hover {
+      background-color: $neutral-100;
+    }
+
+    &:active {
+      background-color: $neutral-200;
+    }
+
+    &:disabled {
+      color: $neutral-250;
+      border-color: $neutral-200;
+
+      svg {
+        color: $neutral-250;
+      }
+    }
+  }
+
+  &.icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: $neutral-100;
+    padding: 0;
+
+    svg {
+      color: $neutral-900;
+    }
+
+    &:hover {
+      background-color: $neutral-200;
+    }
+
+    &:active {
+      background-color: $neutral-200;
+    }
+
+    &:disabled {
+      svg {
+        color: $neutral-250;
+      }
+    }
+
+    &.active {
+      background-color: $neutral-900;
+
+      svg {
+        color: $neutral-white;
+      }
+    }
+  }
+}
+
+:export {
+  neutral100: $neutral-100;
+}

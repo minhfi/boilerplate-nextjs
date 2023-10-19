@@ -1,0 +1,13 @@
+@import '/src/styles/variables';
+@import '/src/styles/mixin';
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.title {
+  @include typo(14px, 700, 21px);
+  color: $neutral-500
+}

@@ -1,0 +1,293 @@
+@import '/src/styles/variables';
+@import '/src/styles/mixin';
+
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include mediaQueryMax($screenXXLarge) {
+    display: block;
+  }
+}
+
+.container {
+  position: relative;
+  padding: 40px 47px;
+
+  display: flex;
+  align-items: center;
+  gap: 64px;
+
+  @include mediaQueryMax($screenXLarge) {
+    padding: 40px 16px;
+  }
+
+
+  @include mediaQueryMax($screenLarge) {
+    padding-top: 150px;
+    flex-direction: column-reverse;
+  }
+}
+
+.thumbnail {
+  box-sizing: border-box;
+  position: relative;
+  width: 639px;
+  height: 666px;
+  background-color: $primary-400;
+  border-radius: 32px;
+  padding: 32px 0 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+
+  p {
+    font-family: 'Walter Turncoat', cursive;
+    font-weight: 400;
+    font-size: 28px;
+    margin: 0;
+  }
+
+  >div:nth-of-type(1) {
+    position: absolute;
+    left: 10px;
+    top: 20px;
+  }
+
+  >div:nth-of-type(2) {
+    position: relative;
+    width: 350px;
+    height: 500px;
+
+    >div {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      z-index: 2;
+      width: 330px;
+      height: 460px;
+      overflow: hidden;
+      transform: translate(-45.7%, 0%);
+      border-radius: 16px;
+
+      video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: bottom;
+
+        &:fullscreen {
+          object-fit: contain;
+        }
+      }
+    }
+  }
+
+  >div:nth-of-type(3) {
+    position: absolute;
+    right: -22px;
+    bottom: 0;
+  }
+}
+
+.content {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+
+  div:nth-of-type(1) {
+    position: absolute;
+    top: -127px;
+    right: -119px;
+
+    h5 {
+      margin: 0;
+      text-align: center;
+      font-family: "Walter Turncoat";
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 28px;
+      width: 256px;
+      position: absolute;
+      transform: rotate(26deg);
+      top: 47px;
+      left: 40px;
+    }
+
+    @include mediaQueryMax($screenLarge) {
+      right: 0;
+    }
+  }
+
+  >p {
+    margin: 0;
+    width: 503px;
+    @include typo(80px, 700, 96px);
+    letter-spacing: -2px;
+  }
+
+  div {
+    display: flex;
+    gap: 24px;
+  }
+
+  div:nth-of-type(2) {
+    >button:nth-of-type(2) {
+      svg {
+        margin-left: 8px;
+        path {
+          fill: $neutral-black
+        }
+      }
+    }
+  }
+}
+
+.mHome {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include mediaQueryMax($screenExtraSmall) {
+    display: block;
+  }
+}
+
+.mContainer {
+  position: relative;
+  padding: 32px 16px 40px;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.mThumbnail {
+  box-sizing: border-box;
+  position: relative;
+  width: 358px;
+  height: 373px;
+  background-color: $primary-400;
+  border-radius: 32px;
+  padding-top: 23px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+
+  @include mediaQueryMax($screenExtraXSmall) {
+    width: 100%;
+  }
+
+  p {
+    font-family: 'Walter Turncoat';
+    font-weight: 400;
+    font-size: 16px;
+    margin: 0;
+  }
+
+  >div:nth-of-type(1) {
+    position: absolute;
+    left: 0;
+    top: 11px;
+
+    @include mediaQueryMax($screenSmall) {
+      left: 6px;
+    }
+  }
+
+  >div:nth-of-type(2) {
+      position: relative;
+
+      >div {
+        position: absolute;
+        top: 8px;
+        left: 50%;
+        z-index: 2;
+        width: 178px;
+        height: 249px;
+        overflow: hidden;
+        transform: translate(-47.5%, 0%);
+        border-radius: 9px;
+
+        video {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: bottom;
+
+          &:fullscreen {
+            object-fit: contain;
+          }
+        }
+      }
+  }
+
+  >div:nth-of-type(3) {
+    position: absolute;
+    right: -8px;
+    bottom: 0;
+  }
+}
+
+.mContent {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  >div:nth-of-type(1) {
+    align-self: flex-end;
+    position: relative;
+
+    h5 {
+      position: absolute;
+      margin: 0;
+      text-align: center;
+      font-family: "Walter Turncoat";
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 21px;
+      width: 178px;
+      letter-spacing: -1px;
+      position: absolute;
+      transform: rotate(26deg);
+      top: 36px;
+      left: 33px;
+    }
+  }
+
+  p {
+    @include typo(40px, 700, 48px);
+    margin: 0;
+    letter-spacing: -1px;
+
+    @include mediaQueryMax($screenExtraXSmall) {
+      font-size: 36px;
+    }
+  }
+
+  >div:nth-of-type(2) {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-top: 32px;
+
+    >button:nth-of-type(2) {
+      svg {
+        margin-left: 8px;
+        path {
+          fill: $neutral-black
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,88 @@
+@import '/src/styles/variables';
+@import '/src/styles/mixin';
+
+.header {
+  position: relative;
+  z-index: 999;
+  box-sizing: border-box;
+  max-height: 106px;
+  height: 106px;
+  padding: 16px 44px;
+  border-bottom: 1px solid $neutral-200;
+  background-color: $neutral-white;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  >div svg {
+    cursor: pointer;
+  }
+
+  @include mediaQueryMax($screenSmall) {
+    max-height: 82px;
+    height: 82px;
+    padding: 0;
+
+    justify-content: center;
+
+    >div:nth-of-type(2) {
+      position: absolute;
+      right: 16px;
+
+      svg {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+
+  >div {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+
+    div {
+      cursor: pointer;
+    }
+  }
+}
+
+.button {
+  position: relative;
+
+  >div {
+    position: absolute;
+    top: 72px;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+.drawer {
+  position: relative;
+  border-radius: 0 0 32px 32px;
+  transition: all .15s ease-in-out;
+}
+
+.mNav {
+  padding: 106px 16px 16px;
+  background-color: $neutral-white;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  div:nth-of-type(4) {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+}
