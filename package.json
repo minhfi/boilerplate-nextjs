@@ -1,12 +1,11 @@
 {
-  "name": "knowme-website",
+  "name": "boilerplate",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "postinstall": "rimraf .husky&&husky install&&husky add .husky/pre-commit \"npm run precommit\"",
-    "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
+    "start": "cross-env NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
-    "start": "next start",
     "lint": "next lint",
     "precommit": "lint-staged",
     "test": "jest --watch"
